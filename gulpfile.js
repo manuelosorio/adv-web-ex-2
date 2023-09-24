@@ -23,7 +23,7 @@ const packer = require("@hail2u/css-mqpacker");
 const purgeCSS = require('@fullhuman/postcss-purgecss');
 
 let config = {
-  cname: 'starter-kit.manuelosorio.me'
+  cname: ''
 }
 let paths ={
   styles: {
@@ -60,17 +60,21 @@ function style() {
       includePaths: resets.concat(bourbon),
       outputStyle: "expanded"
     }).on('error', sass.logError))
-    .pipe(postcss([
-      autoPrefixer()],
-      packer({
-        sort: true
-      }),
-      purgeCSS({
-        content: [
-          paths.html.dest + '**/*.html'
-        ]
-      })
-    ))
+    .pipe(
+      postcss(
+        [
+          autoPrefixer(),
+          packer({
+            sort: true
+          }),
+          purgeCSS({
+            content: [
+              paths.html.dest + '**/*.html'
+            ],
+          })
+        ],
+      )
+    )
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(paths.styles.dest))
     .pipe(browserSync.stream());
@@ -104,9 +108,15 @@ async function images() {
         gulpImagemin.optipng({ optimizationLevel: 5 }),
         gulpImagemin.svgo({
           plugins: [
-            { removeViewBox: false },
-            { collapseGroups: true }
-          ]
+            {
+              name: "removeViewBox",
+              active: false
+            },
+            {
+              name: "collapseGroups",
+              active: true
+            }
+        ]
         })
       ])
 
@@ -119,16 +129,16 @@ function scripts() {
     if (err) {
       console.log('Error')
     }
-    const b = browserify({
-      debug: true,
+    const bundler = browserify({
+      debug: false,
       cache: {},
       packageCache: {},
+
     });
     files.forEach((file) => {
-      console.log(file)
-      b.add(file);
+      bundler.add(file);
     })
-    b.plugin(tsify)
+    bundler.plugin(tsify)
       .transform(babelify, {
         extensions: ['.ts'],
       })
@@ -139,7 +149,7 @@ function scripts() {
 }
 function scriptsMinify() {
   const bundler = browserify({
-    debug: true,
+    debug: false,
     baseDir: '.',
     entries: [paths.scripts.src],
     cache: {},
@@ -184,7 +194,7 @@ function ghPages() {
   return publish(
     ".publish",
     {
-      remoteUrl: "https://github.com/manuelosorio/starter-kit.git",
+      remoteUrl: "git@github.com:manuelosorio/adv-web-ex-2.git",
       branch: 'gh-pages',
       // cacheDir: '.publish',
       message: 'Update ' + new Date().toISOString()
@@ -207,7 +217,7 @@ exports.scripts = scripts
 exports.scriptsMinify = scriptsMinify
 exports.ghPages = ghPages
 
-let build = gulp.parallel([html, fonts, scriptsMinify, fonts], style, images,);
+let build = gulp.parallel([html, fonts, scriptsMinify, fonts], style, images);
 let buildWatch = gulp.series(gulp.parallel([html, fonts, scripts, fonts]), images, style, watch);
 let staticBuild = gulp.series(cleanDist, build)
 

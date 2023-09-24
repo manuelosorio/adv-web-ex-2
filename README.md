@@ -1,14 +1,20 @@
-# Manuel Osorio Start Kit
-Starter Kit used for my future projects
-## TODO
-* Add processing for:
-    - [x] ~~Images~~
-    - [x] ~~JavaScript~~
-    - [x] ~~Pug~~
-    - [x] ~~Sass~~
-    - [x] ~~GH-Pages Deployment~~
-* Make a SCSS Version
-* Make a Version that doesn't use Pug
-* Make simple one page site
-* Add boilerplate code
-* Create an simple CMD tool to make new project using this repository
+# Exercise 2 SASS/JQUERY
+Course: Advanced Web Page Design 
+
+## Description
+This is a simple webpage that uses SASS and JavaScript (via Typescript) that creates a shows a modal on button press.
+
+## Installation
+1. Clone the repository
+2. Run `yarn install` to install the dependencies
+3. Run `yarn start` to start the development server
+4. Open `http://localhost:3000` in your browser
+
+## Deployment
+  ### GitHub Pages
+    1. Update gulpfile ghPages task to use your repository
+    2. Update gulpfile config to include correct CNAME or makes sure to make it an empty string if you don't need it
+    3. Run `yarn run deploy` to deploy to github pages
+  ### Other
+    1. Run `yarn run build` to build the project
+    2. Copy the contents of the `dist` folder to your webserver

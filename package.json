@@ -1,7 +1,7 @@
 {
-  "name": "starter-kit",
-  "version": "1.6.0",
-  "description": "Starter Kit for my future projects",
+  "name": "exercise-2-sass-jquery",
+  "version": "1.0.0",
+  "description": "Exercise 2 SASS/JQUERY",
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/manuelosorio/starter-kit.git"
+    "url": "git+https://github.com/manuelosorio/adv-web-ex-2.git"
   },
   "keywords": [
     "Manuel",
@@ -27,9 +27,9 @@
   "author": "Manuel Osorio",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/manuelosorio/starter-kit/issues"
+    "url": "https://github.com/manuelosorio/adv-web-ex-2/issues"
   },
-  "homepage": "https://github.com/manuelosorio/starter-kit#readme",
+  "homepage": "https://github.com/manuelosorio/adv-web-ex-2#readme",
   "devDependencies": {
     "@babel/core": "^7.10.5",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
@@ -39,6 +39,7 @@
     "@fullhuman/postcss-purgecss": "^5.0.0",
     "@hail2u/css-mqpacker": "github:hail2u/node-css-mqpacker",
     "@types/gh-pages": "^3.2.1",
+    "@types/jquery": "^3.5.19",
     "@typescript-eslint/eslint-plugin": "^5.54.0",
     "@typescript-eslint/parser": "^5.54.0",
     "autoprefixer": "^10.4.13",
@@ -78,6 +79,7 @@
   "dependencies": {
     "@snyk/protect": "^1.1110.0",
     "core-js": "^3.29.0",
+    "gulp-beautify": "^3.0.0",
     "node-normalize-scss": "^8.1.2",
     "postcss": "^8.1.0",
     "scss-resets": "^0.5.2"
