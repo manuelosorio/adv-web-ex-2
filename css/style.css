@@ -1,0 +1,111 @@
+/*!
+ * *  Project: Exercise 2 SASS/JQUERY
+ * *  Author: Manuel Osorio
+ * *  Version: 1.0.0
+ * *  Licensed under MIT Open Source
+ * * */
+/*----------------------  Table Of Contents ---------------------- */
+/**
+ * 1 [Utilities]
+ *    1.1 [Normalize]
+ * 2 [Base]
+ * 3 [Layout]
+ * 4 [Components]
+ *  4.1 [Button]
+ *  4.2 [Modal]
+ * 5 [States] */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400;1,600&display=swap");
+/*----------------------  2 [Base]  ---------------------- */
+/**
+ * Base syntax should not contain any classes, id or use attribute selectors of any kind.
+ * Resets or basic styles for elements belong here
+ *
+ * Example:
+ *  header { ... } */
+* {
+  box-sizing: border-box;
+}
+*:before, *:after {
+  box-sizing: inherit;
+}
+
+/*----------------------  End Base  ----------------------*/
+/*----------------------  3 [Layout]  ---------------------- */
+/**
+ * Layout Syntax Example:
+ *
+ * .l-container { ... }
+ *
+ * Sass Syntax:
+ *
+ * .l-
+ *  &container
+ *    ...
+ * html code:
+ * <section class="l-container"> ... </section> */
+/*----------------------  End Layout  ----------------------*/
+/*----------------------  4 [Components]  ---------------------- */
+/**
+ * Components code style naming conventions follows bem methodology
+ *
+ * .block__element--modifier { ... }
+ *
+ * sass written as:
+ * .block
+ *   ...
+ *  &__element
+ *     ...
+ *    &--modifier
+ *       ...
+ *
+ * html syntax:
+ * <div class="block block__element--modifier"> ... </div> */
+/*!
+ * *  Project: Exercise 2 SASS/JQUERY
+ * *  Author: Manuel Osorio
+ * *  Version: 1.0.0
+ * *  Licensed under MIT Open Source
+ * * */
+/*----------------------  Table Of Contents ---------------------- */
+/**
+ * 1 [Utilities]
+ *    1.1 [Normalize]
+ * 2 [Base]
+ * 3 [Layout]
+ * 4 [Components]
+ *  4.1 [Button]
+ *  4.2 [Modal]
+ * 5 [States] */
+/* ---- 4.1 Button ---- */
+.button {
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5625rem 0.875rem;
+  transition: all ease-in-out 200ms;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.button__primary {
+  --button-bg-color: #6638F0 ;
+  --button-text-color: #FFFFFF ;
+  border: none;
+}
+.button__primary:hover {
+  --button-bg-color: #FFFFFF ;
+  --button-text-color: #6638F0 ;
+}
+.button--close {
+  border: none;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+
+/* ensures that parent has position relative */
+
+/* ---- End Button ---- */
+/*----------------------  End Modules  ---------------------- */
+/*# sourceMappingURL=style.css.map */
