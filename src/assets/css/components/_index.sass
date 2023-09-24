@@ -1,11 +1,11 @@
-/*----------------------  4 [Modules]  ----------------------
+/*----------------------  4 [Components]  ----------------------
 /**
-  Module code style naming conventions
+  Components code style naming conventions follows bem methodology
 
-  .module__element--modifier { ... }
+  .block__element--modifier { ... }
 
   sass written as:
-  .module
+  .block
      ...
     &__element
        ...
@@ -13,8 +13,9 @@
          ...
 
   html syntax:
-  <div class="module module__element--modifier"> ... </div>
+  <div class="block block__element--modifier"> ... </div>
 
+@forward "button"
 @forward "modal"
 
 /*----------------------  End Modules  ----------------------

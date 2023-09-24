@@ -26,5 +26,18 @@ html(lang="en")
     meta(name="viewport" content="width=device-width,initial-scale=1.0")
     link(rel="stylesheet" href="css/style.css")
   body
-    include includes/header.pug
+    main
+      div
+        h3 Elementum sagittis vitae et leo duis ut diam quam.
+        p Dolor sit amet consectetur adipiscing elit duis.
+        button.button.button__primary#openModal(type="button") Open Modal
+
+      dialog#modal.modal.visibility-flex
+        div.modal-content__left &nbsp;
+        div.modal-content__right
+          h3 Ultrices vitae auctor eu augue vitae nunc sed velit dignissim donec ac odio tempor
+          p Elementum sagittis vitae et leo duis ut diam quam. Dolor sit amet consectetur adipiscing elit duis. At imperdiet dui accumsan sit amet. Sed faucibus turpis in eu mi bibendum neque egestas congue. Cursus euismod quis viverra nibh cras pulvinar mattis. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus.
+        button.button.button--close#closeModal(type="button")
+          img(src="https://cdn-manuelosorio.cyclic.app/api/icons/x?color=%23000&size=24&stroke_width=1" alt="Close Modal")
+
     script(src="scripts/main.js")

@@ -1,0 +1,40 @@
+@use "src/assets/css/variables"
+@use "src/assets/css/utils"
+/* ---- 4.1 Button ---- */
+
++utils.init-property("button-bg-color", variables.$c-white)
++utils.init-property("button-text-color", variables.$c-black)
++utils.create-root()
+
+.button
+  background-color: var(--button-bg-color)
+  color: var(--button-text-color)
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  padding: 0.5625rem 0.875rem
+  transition: all variables.$t-ease-in-out
+  border-radius: 5px
+  cursor: pointer
+  &__primary
+    +utils.custom-properties("button-bg-color", variables.$c-primary)
+    +utils.custom-properties("button-text-color", variables.$c-white)
+    border: none
+    &:hover
+      +utils.custom-properties("button-bg-color", variables.$c-white)
+      +utils.custom-properties("button-text-color", variables.$c-primary)
+  &__secondary
+    +utils.custom-properties("button-text-color", variables.$c-primary)
+    border: none
+    border-radius: 5px
+    &:hover
+      +utils.custom-properties("button-text-color", variables.$c-black)
+  &--close
+    border: none
+    position: absolute
+    top: 0.5rem
+    right: 0.5rem
+/* ensures that parent has position relative */
+:has(.button--close)
+  position: relative
+/* ---- End Button ---- */
