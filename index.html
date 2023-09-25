@@ -25,20 +25,27 @@
   </head>
   <body>
     <main>
-      <div>
-        <h3>Elementum sagittis vitae et leo duis ut diam quam.</h3>
-        <p>Dolor sit amet consectetur adipiscing elit duis.</p>
-        <button class="button button__primary" id="openModal" type="button">Open Modal</button>
-      </div>
-      <dialog class="modal visibility-flex" id="modal">
-        <div class="modal-content__left">&nbsp;</div>
-        <div class="modal-content__right">
-          <h3>Ultrices vitae auctor eu augue vitae nunc sed velit dignissim donec ac odio tempor</h3>
-          <p>Elementum sagittis vitae et leo duis ut diam quam. Dolor sit amet consectetur adipiscing elit duis. At imperdiet dui accumsan sit amet. Sed faucibus turpis in eu mi bibendum neque egestas congue. Cursus euismod quis viverra nibh cras pulvinar mattis. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus.</p>
+      <article class="card">
+        <div class="card__left">
+          <h3>Elementum sagittis vitae et leo duis ut diam quam.</h3>
+          <p>Dolor sit amet consectetur adipiscing elit duis.</p>
+          <button class="button button__primary" id="openModal" type="button">Open Modal</button>
+        </div>
+        <div class="card__right"><img src="images/graphic.svg" alt="Sparkly Graphic"></div>
+      </article>
+      <dialog class="modal" id="modal">
+        <div class="modal-content">
+          <div class="modal-content__left">&nbsp;</div>
+          <div class="modal-content__right">
+            <h3>Ultrices vitae auctor eu augue vitae nunc sed velit dignissim donec ac odio tempor</h3>
+            <p>Elementum sagittis vitae et leo duis ut diam quam. Dolor sit amet consectetur adipiscing elit duis. At imperdiet dui accumsan sit amet. Sed faucibus turpis in eu mi bibendum neque egestas congue. Cursus euismod quis viverra nibh cras pulvinar mattis. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus.</p>
+            <div><a class="button button__primary" href="#">Integer Vitae</a><a class="button button__secondary" href="#">Imperdiet Dui</a></div>
+          </div>
         </div>
         <button class="button button--close" id="closeModal" type="button"><img src="https://cdn-manuelosorio.cyclic.app/api/icons/x?color=%23000&amp;size=24&amp;stroke_width=1" alt="Close Modal"></button>
       </dialog>
     </main>
+    <footer><small><a href="https://github.com/manuelosorio/adv-web-ex-2" target="_blank" rel="noopener noreferrer">View Source Code</a></small></footer>
     <script src="scripts/main.js"></script>
   </body>
 </html>
