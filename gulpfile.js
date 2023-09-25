@@ -232,9 +232,9 @@ exports.scripts = scripts
 exports.scriptsMinify = scriptsMinify
 exports.ghPages = ghPages
 
-let build = gulp.parallel([html, fonts, scripts, fonts], style, images);
+let build = gulp.series([html, fonts, scripts, fonts], images, style);
 let buildWatch = gulp.series(gulp.parallel([html, fonts, scripts, fonts]), images, style, watch);
-let staticBuild = gulp.series(cleanDist, build)
+let staticBuild = gulp.series(cleanDist, gulp.parallel(build))
 
 gulp.task('default', gulp.series(cleanDist, buildWatch))
 gulp.task('static', gulp.series(staticBuild))
