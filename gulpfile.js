@@ -64,9 +64,9 @@ function style() {
       postcss(
         [
           autoPrefixer(),
-          // packer({
-          //   sort: false
-          // }),
+          packer({
+            sort: true
+          }),
           purgeCSS({
             content: [
               paths.html.dest + '**/*.html'
