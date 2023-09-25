@@ -1,6 +1,9 @@
 # Exercise 2 SASS/JQUERY
 Course: Advanced Web Page Design 
 
+## Live Demo
+    [https://manuelosorio.github.io/adv-web-ex-2/](https://manuelosorio.github.io/adv-web-ex-2/)
+
 ## Description
 This is a simple webpage that uses SASS and JavaScript (via Typescript) that creates a shows a modal on button press.
 
