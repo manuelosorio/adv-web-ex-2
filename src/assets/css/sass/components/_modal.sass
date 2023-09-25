@@ -1,0 +1,50 @@
+/* ---- 4.2 Modal ---- */
+@use "../variables"
+.modal
+  position: fixed
+  background: variables.$c-white
+  border: none
+  border-radius: 10px
+  //position: relative
+  padding: 0
+  width: 750px
+  overflow: hidden
+  transition: all 0.5s ease-in-out
+  &[open]
+    -webkit-animation: animate-modal 1s ease-in-out
+    animation: animate-modal 1s ease-in-out
+    &::backdrop
+      background: rgba(variables.$c-silver, .4)
+      backdrop-filter: blur(5px) opacity(1)
+      -webkit-animation: show-backdrop 1s ease-in-out
+      animation: show-backdrop 1s ease-in-out
+.modal-content
+  display: flex
+  flex-direction: row
+  gap: 2%
+  &__left
+    display: flex
+    width: 50%
+    background: linear-gradient(154.5deg, variables.$c-primary 0%, variables.$c-secondary 100%)
+
+    align-items: stretch
+  &__right
+    flex-basis: 50%
+    padding: 1.25rem 1rem
+
+
+
+@-webkit-keyframes show-backdrop
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@keyframes animate-modal
+  from
+    opacity: 0
+    transform: translateY(200%)
+  to
+    opacity: 1
+    transform: translateY(0)
+/* ---- End Modal ---- */

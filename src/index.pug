@@ -1,22 +1,22 @@
 doctype html
 html(lang="en")
   head
-    title Manuel Osorio - Starter Kit
+    title Manuel Osorio - Exercise 2 SASS/JQUERY
     meta(charset="utf-8")
     meta(name="Author" content="Manuel Osorio")
-    meta(name="description" content="Starter kit used to quickly get started on new projects.")
+    meta(name="description" content="This is a simple webpage that uses SASS and JavaScript (via Typescript) that creates a shows a modal on button press.")
     
     // Open Graph - Facebook, Google, LinkedIn
     meta(property="og:type" content="Article")
-    meta(property="og:description" content="Starter kit used to quickly get started on new projects.")
+    meta(property="og:description" content="This is a simple webpage that uses SASS and JavaScript (via Typescript) that creates a shows a modal on button press.")
     meta(property="og:image" content="")
     meta(property="og:url" content="#")
-    meta(property="og:site_name" content="Manuel Osorio - Starter Kit")
+    meta(property="og:site_name" content="Manuel Osorio - Exercise 2 SASS/JQUERY")
     //end Open Graph
 
     //Twitter Meta Content
-    meta(name="twitter:title" content="Manuel Osorio - Starter Kit")
-    meta(name="twitter:description" content="Starter kit used to quickly get started on new projects.")
+    meta(name="twitter:title" content="Manuel Osorio - Exercise 2 SASS/JQUERY")
+    meta(name="twitter:description" content="This is a simple webpage that uses SASS and JavaScript (via Typescript) that creates a shows a modal on button press.")
     meta(name="twitter:image" content="")
     meta(name="twitter:site" content="@TheManuelOsorio")
     meta(name="twitter:creator" content="@TheManuelOsorio")
@@ -27,17 +27,26 @@ html(lang="en")
     link(rel="stylesheet" href="css/style.css")
   body
     main
-      div
-        h3 Elementum sagittis vitae et leo duis ut diam quam.
-        p Dolor sit amet consectetur adipiscing elit duis.
-        button.button.button__primary#openModal(type="button") Open Modal
+      article.card
+        div.card__left
+          h3 Elementum sagittis vitae et leo duis ut diam quam.
+          p Dolor sit amet consectetur adipiscing elit duis.
+          button.button.button__primary#openModal(type="button") Open Modal
+        div.card__right
+          img(src="images/graphic.svg" alt="Sparkly Graphic")
+      dialog#modal.modal
+        div.modal-content
+          div.modal-content__left &nbsp;
+          div.modal-content__right
+            h3 Ultrices vitae auctor eu augue vitae nunc sed velit dignissim donec ac odio tempor
+            p Elementum sagittis vitae et leo duis ut diam quam. Dolor sit amet consectetur adipiscing elit duis. At imperdiet dui accumsan sit amet. Sed faucibus turpis in eu mi bibendum neque egestas congue. Cursus euismod quis viverra nibh cras pulvinar mattis. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus.
 
-      dialog#modal.modal.visibility-flex
-        div.modal-content__left &nbsp;
-        div.modal-content__right
-          h3 Ultrices vitae auctor eu augue vitae nunc sed velit dignissim donec ac odio tempor
-          p Elementum sagittis vitae et leo duis ut diam quam. Dolor sit amet consectetur adipiscing elit duis. At imperdiet dui accumsan sit amet. Sed faucibus turpis in eu mi bibendum neque egestas congue. Cursus euismod quis viverra nibh cras pulvinar mattis. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus.
+
+            div
+              a.button.button__primary(href="#") Integer Vitae
+              a.button.button__secondary(href="#") Imperdiet Dui
         button.button.button--close#closeModal(type="button")
           img(src="https://cdn-manuelosorio.cyclic.app/api/icons/x?color=%23000&size=24&stroke_width=1" alt="Close Modal")
-
+    footer
+      a(href="https://github.com/manuelosorio/adv-web-ex-2" target="_blank" rel="noopener noreferrer") View Source Code
     script(src="scripts/main.js")

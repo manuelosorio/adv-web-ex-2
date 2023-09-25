@@ -64,12 +64,27 @@ function style() {
       postcss(
         [
           autoPrefixer(),
-          packer({
-            sort: true
-          }),
+          // packer({
+          //   sort: false
+          // }),
           purgeCSS({
             content: [
               paths.html.dest + '**/*.html'
+            ],
+            extractors: [
+              {
+                extractor: (content) => {
+                  // Extract class names and ids
+                  const broadMatches = content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || [];
+                  const innerMatches = content.match(/[^<>"'`\s.()]*[^<>"'`\s.():]/g) || [];
+
+                  // Add comments to the list of matches
+                  const commentMatches = content.match(/\/\*[\s\S]*?\*\//g) || [];
+
+                  return broadMatches.concat(innerMatches, commentMatches);
+                },
+                extensions: ['html', 'js']
+              }
             ],
           })
         ],
@@ -217,7 +232,7 @@ exports.scripts = scripts
 exports.scriptsMinify = scriptsMinify
 exports.ghPages = ghPages
 
-let build = gulp.parallel([html, fonts, scriptsMinify, fonts], style, images);
+let build = gulp.parallel([html, fonts, scripts, fonts], style, images);
 let buildWatch = gulp.series(gulp.parallel([html, fonts, scripts, fonts]), images, style, watch);
 let staticBuild = gulp.series(cleanDist, build)
 

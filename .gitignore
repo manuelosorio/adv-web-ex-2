@@ -80,3 +80,5 @@ typings/
 *.launch
 .settings/
 *.sublime-workspace
+
+**/*/*:Zone.Identifier

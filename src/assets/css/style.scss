@@ -4,22 +4,19 @@
   *  Version: 1.0.0
   *  Licensed under MIT Open Source
   *
-/*----------------------  Table Of Contents ----------------------
+/*----------------------  Table Of Contents ----------------------*/
 
 /**
   1 [Utilities]
-      1.1 [Normalize]
   2 [Base]
   3 [Layout]
   4 [Components]
     4.1 [Button]
     4.2 [Modal]
+    4.3 [Card]
   5 [States]
+*/
+
+@use "./sass";
 
 
-
-@use 'variables'
-@use 'utils'
-@use 'base'
-@use 'layout'
-@use 'components'
