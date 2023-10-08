@@ -81,7 +81,7 @@
     "core-js": "^3.29.0",
     "gulp-beautify": "^3.0.0",
     "node-normalize-scss": "^8.1.2",
-    "postcss": "^8.1.0",
+    "postcss": "^8.4.31",
     "scss-resets": "^0.5.2"
   },
   "resolutions": {
